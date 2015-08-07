@@ -1,4 +1,4 @@
-SKIP_SQUASH?=1
+SKIP_SQUASH?=0
 VERSIONS="1.0.0-beta6"
 
 ifeq ($(TARGET),rhel7)

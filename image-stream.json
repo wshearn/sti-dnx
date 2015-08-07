@@ -1,0 +1,37 @@
+{
+  "kind": "ImageStreamList",
+  "apiVersion": "v1beta3",
+  "metadata": {},
+  "items": [
+    {
+      "kind": "ImageStream",
+      "apiVersion": "v1beta3",
+      "metadata": {
+        "name": "dnx",
+        "creationTimestamp": null
+      },
+      "spec": {
+        "dockerImageRepository": "wshearn/dnx-100-beta6-centos7",
+        "tags": [
+          {
+            "name": "latest"
+          },
+          {
+            "name": "1.0.0-beta6",
+            "annotations": {
+              "description": "Build and run DNX 1.0.0-beta6 web applications",
+              "iconClass": "icon-dotnet",
+              "tags": "builder,dnx",
+              "supports": "dnx:1.0.0-beta6,dnx",
+              "version": "1.0.0-beta6"
+            },
+            "from": {
+              "Kind": "ImageStreamTag",
+              "Name": "latest"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

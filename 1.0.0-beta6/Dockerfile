@@ -35,7 +35,7 @@ COPY ./.sti/bin/ /usr/local/sti
 
 # Each language image can have 'contrib' a directory with extra files needed to
 # run and build the applications.
-COPY ./contrib/ /opt/app-root
+COPY ./contrib/ /opt/app-root/src
 
 # Drop the root user and make the content of /opt/app-root owned by user 1001
 RUN chown -R 1001:1001 /opt/app-root

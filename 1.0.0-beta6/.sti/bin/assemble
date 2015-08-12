@@ -11,5 +11,5 @@ fi
 echo "---> Installing application source"
 cp -Rf /tmp/src/. ./
 
-echo "---> Building your Node application from source"
+echo "---> Building your DNX application from source"
 dnu restore

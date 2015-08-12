@@ -7,6 +7,9 @@ EXPOSE 8080
 ENV DNX_VERSION 1.0.0-beta6
 ENV DNX_USER_HOME /opt/dnx
 
+# https://github.com/aspnet/dnx/issues/1590#issuecomment-126965429
+ENV MONO_THREADS_PER_CPU=2000
+
 LABEL io.k8s.description="Platform for building and running .NET Next 1.0.0-beta6 applications" \
       io.k8s.display-name=".NET Next 1.0.0-beta6" \
       io.openshift.expose-services="8080:http" \

@@ -11,19 +11,19 @@
         "creationTimestamp": null
       },
       "spec": {
-        "dockerImageRepository": "wshearn/dnx-100-beta6-centos7",
+        "dockerImageRepository": "wshearn/dnx-100-beta7-centos7",
         "tags": [
           {
             "name": "latest"
           },
           {
-            "name": "1.0.0-beta6",
+            "name": "1.0.0-beta7",
             "annotations": {
-              "description": "Build and run DNX 1.0.0-beta6 web applications",
+              "description": "Build and run DNX 1.0.0-beta7 web applications",
               "iconClass": "icon-dotnet",
               "tags": "builder,dnx",
               "supports": "dnx:1.0.0-beta6,dnx",
-              "version": "1.0.0-beta6"
+              "version": "1.0.0-beta7"
             },
             "from": {
               "Kind": "ImageStreamTag",

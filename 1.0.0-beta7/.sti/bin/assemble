@@ -1,0 +1,15 @@
+#!/bin/bash
+
+[ -d "/usr/src/app" ] && exit 0
+
+set -e
+
+if [ "$1" = "-h" ]; then
+  exec /usr/local/sti/usage
+fi
+
+echo "---> Installing application source"
+cp -Rf /tmp/src/. ./
+
+echo "---> Building your DNX application from source"
+dnu restore

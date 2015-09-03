@@ -6,9 +6,10 @@ EXPOSE 8080
 
 ENV DNX_VERSION 1.0.0-beta7
 ENV DNX_USER_HOME /opt/dnx
+ENV DNX_RUNTIME coreclr
 
 # https://github.com/aspnet/dnx/issues/1590#issuecomment-126965429
-ENV MONO_THREADS_PER_CPU=2000
+ENV MONO_THREADS_PER_CPU 2000
 
 LABEL io.k8s.description="Platform for building and running .NET Next 1.0.0-beta7 applications" \
       io.k8s.display-name=".NET Next 1.0.0-beta7" \
@@ -30,7 +31,7 @@ RUN LIBUV_VERSION=1.4.2 \
 RUN curl -sSL https://raw.githubusercontent.com/aspnet/Home/dev/dnvminstall.sh | DNX_USER_HOME=$DNX_USER_HOME DNX_BRANCH=v$DNX_VERSION sh
 
 RUN bash -c "source $DNX_USER_HOME/dnvm/dnvm.sh \
-	&& dnvm install $DNX_VERSION -a default \
+	&& dnvm install $DNX_VERSION -r $DNX_RUNTIME \
 	&& dnvm alias default | xargs -i ln -s $DNX_USER_HOME/runtimes/{} $DNX_USER_HOME/runtimes/default"
 
 # Copy the STI scripts from the specific language image to /usr/local/sti

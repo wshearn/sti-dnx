@@ -4,7 +4,7 @@ set -e
 
 # Runs the nodejs application server.
 run_dnx() {
-  exec dnx . kestrel
+  exec dnx kestrel
 }
 
 # If the official dockerhub node image is used, skip the SCL setup below
